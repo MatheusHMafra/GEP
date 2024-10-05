@@ -1,5 +1,4 @@
 # GEP
 Gerenciamento de Estoque para Papelaria
 
-
-https://docs.google.com/spreadsheets/d/1uz31qg_KOq_QC41zJZkQ6U6LAAnTYZyAObS7V35lLA0/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1f2w6o1zCme2inA59t7GaJJUE9n23ikCOGiVwxfyG56k/edit?usp=sharing
