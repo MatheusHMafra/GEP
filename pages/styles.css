@@ -3,13 +3,17 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f5f5f5;
+    color: #333;
 }
 
 header {
     background-color: #333;
     color: #fff;
-    padding: 40px 0;
+    padding: 20px 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
@@ -17,6 +21,7 @@ nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 
 nav ul li {
@@ -38,7 +43,25 @@ nav ul li a:hover {
 
 main {
     padding: 20px;
-    margin: auto 15% auto 15%;
+    margin: auto 10%;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 /*Dashboard*/
@@ -53,6 +76,7 @@ main {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    text-align: center;
 }
 
 .box h3 {
@@ -67,202 +91,105 @@ main {
 
 /*Estoque*/
 .tabela-estoque {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
-    gap: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-estoque th, .tabela-estoque td {
+    padding: 10px;
+    text-align: left;
 }
 
 .tabela-estoque th {
     background-color: #333;
     color: #fff;
-    padding: 10px;
 }
 
-.tabela-estoque td {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.tabela-estoque td:nth-child(2n) {
+.tabela-estoque tr:nth-child(even) {
     background-color: #f5f5f5;
 }
 
-/*Cadastro*/
-main.cadastro {
-    padding: 20px;
-    margin: auto 35% auto 35%;
-}
-
-form.cadastro {
+/*Cadastro, Relatórios, Compras*/
+form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
+    gap: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    max-width: 500px;
+    margin: auto;
 }
 
-form.cadastro h2 {
-    margin: 0;
-    font-size: 24px;
+form label {
+    margin-bottom: 5px;
 }
 
-form.cadastro label {
-    display: block;
-    margin: 10px 0;
-}
-
-form.cadastro input {
+form input, form select, form textarea {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    box-sizing: border-box; /* Adicionado para incluir padding no tamanho total */
 }
 
-form.cadastro input:focus {
+form input:focus, form select:focus, form textarea:focus {
     border-color: #333;
 }
 
-form.cadastro select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+form button {
+    align-self: center;
+    width: 50%;
 }
 
-form.cadastro select:focus {
-    border-color: #333;
-}
-
-form.cadastro textarea {
-    width: 100%;
-    height: 100px;
-    max-width: 100%;
-    min-height: 100px;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-form.cadastro button {
-    background-color: #333;
-    color: #fff;
+.relatorio-button {
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    background-color: #fff;
+    color: #333;
     padding: 10px 15px;
-    border: none;
+    border: 2px solid #333;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-form.cadastro button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/*Relatórios*/
-main.relatorio {
-    padding: 20px;
-    margin: auto 35% auto 35%;
-}
-
-form.relatorio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-}
-
-form.relatorio h2 {
-    margin: 0;
-    font-size: 24px;
-}
-
-form.relatorio label {
-    display: block;
-    margin: 10px 0;
-}
-
-form.relatorio input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-form.relatorio input:focus {
-    border-color: #333;
-}
-
-form.relatorio button {
+.relatorio-button:hover {
     background-color: #333;
     color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-form.relatorio button:hover {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-/*Compras*/
-main.compras {
-    padding: 20px;
-    margin: auto 35% auto 35%;
-}
-
-form.compras {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
+.popup {
+    display: none;
+    position: fixed;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #fff;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    z-index: 1001;
 }
 
-form.compras h2 {
-    margin: 0;
-    font-size: 24px;
-}
-
-form.compras label {
+.popup.active {
     display: block;
-    margin: 10px 0;
 }
 
-form.compras input {
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-form.compras input:focus {
-    border-color: #333;
-}
-
-form.compras button {
-    background-color: #333;
-    color: #fff;
-    margin-top: 10px;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form.compras button:hover {
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-overlay.active {
+    display: block;
 }
